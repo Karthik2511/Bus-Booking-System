@@ -2,6 +2,8 @@
 
 A high-performance, responsive, and beautifully designed web application and reservation engine for searching inter-city buses, selecting seats in real-time, and generating digital tickets. Built using a modern decoupled architecture: **React 19**, **TypeScript**, **Vite**, and **Node.js Express**.
 
+👉 **Live Demo**: [appweave-labs.netlify.app](https://appweave-labs.netlify.app/)
+
 This showcase repository demonstrates the project structure, clean architectural choices, and design aesthetics of the complete passenger-facing search and booking web application, without exposing proprietary configuration details or production environment variables.
 
 ---
