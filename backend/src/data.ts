@@ -66,17 +66,17 @@ export const busesData: Bus[] = [
   }
 ];
 
-// Generate seats for buses to map initially
+
 export const busSeatsData: Record<string, Seat[]> = {};
 
-// Helper to init seats
+
 export function initSeatsForBus(bus: Bus) {
   const seats: Seat[] = [];
   const rows = Math.ceil(bus.availableSeats / 4);
   for (let i = 0; i < bus.availableSeats; i++) {
     seats.push({
       seatNumber: i + 1,
-      isAvailable: Math.random() > 0.2, // 80% available
+      isAvailable: Math.random() > 0.2, 
       row: Math.floor(i / 4) + 1,
       column: (i % 4) + 1,
       seatType: bus.seatTypes[0]
@@ -87,6 +87,6 @@ export function initSeatsForBus(bus: Bus) {
 
 busesData.forEach((bus) => initSeatsForBus(bus));
 
-// A map to keep track of locked seats
-// key: "busId_seatNumber", value: { lockedAt: timestamp }
+
+
 export const activeLocks: Record<string, { lockedAt: number }> = {};

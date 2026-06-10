@@ -15,7 +15,7 @@ export const lockSeats = (req: Request, res: Response) => {
 
   const now = Date.now();
   
-  // Verify availability
+  
   const busSeats = busSeatsData[busId] || [];
   for (const seatNumber of seats) {
     const seatObj = busSeats.find(s => s.seatNumber === seatNumber);
@@ -33,7 +33,7 @@ export const lockSeats = (req: Request, res: Response) => {
     }
   }
 
-  // Lock seats
+  
   for (const seatNumber of seats) {
     const lockKey = `${busId}_${seatNumber}`;
     activeLocks[lockKey] = { lockedAt: now };
@@ -54,14 +54,14 @@ export const confirmBooking = (req: Request, res: Response) => {
 
   const busSeats = busSeatsData[busId] || [];
   
-  // Mark as permanently booked
+  
   for (const seatNumber of seats) {
     const seatObj = busSeats.find(s => s.seatNumber === seatNumber);
     if (seatObj) {
       seatObj.isAvailable = false;
     }
     
-    // Clear lock
+    
     const lockKey = `${busId}_${seatNumber}`;
     delete activeLocks[lockKey];
   }

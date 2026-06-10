@@ -68,42 +68,42 @@ graph TD
 
 ```
 bus-booking-showcase/
-├── backend/                       # Express Node.js application
+├── backend/
 │   ├── src/
 │   │   ├── controllers/
-│   │   │   ├── bookingController.ts # Logic for seat locking and payment validation
-│   │   │   └── busController.ts     # Filtering, search, and dynamic bus generator
+│   │   │   ├── bookingController.ts
+│   │   │   └── busController.ts
 │   │   ├── routes/
-│   │   │   └── api.routes.ts        # REST endpoints declaration
-│   │   ├── data.ts                  # Mock database & locking state manager
-│   │   └── index.ts                 # Express configuration and listener
-│   ├── package.json                 # Backend dev dependencies & scripts
-│   └── tsconfig.json                # TypeScript compiler rules
-├── frontend/                      # React SPA client application
-│   ├── public/                      # Static assets & SVG icons
+│   │   │   └── api.routes.ts
+│   │   ├── data.ts
+│   │   └── index.ts
+│   ├── package.json
+│   └── tsconfig.json
+├── frontend/
+│   ├── public/
 │   ├── src/
-│   │   ├── assets/                  # Hero banners and background assets
+│   │   ├── assets/
 │   │   ├── components/
-│   │   │   ├── Navbar.tsx           # Global navigation header
+│   │   │   ├── Navbar.tsx
 │   │   │   └── Navbar.css
 │   │   ├── data/
-│   │   │   └── cities.ts            # Indian cities geo-coordinates dataset
+│   │   │   └── cities.ts
 │   │   ├── pages/
-│   │   │   ├── HomePage.tsx         # Search card and distance indicator
-│   │   │   ├── BusSearchPage.tsx    # List results & filter sidebar
-│   │   │   ├── BusDetailsPage.tsx   # Visual seat layout grid
-│   │   │   ├── BookingConfirmationPage.tsx # Checkout and passenger forms
-│   │   │   └── TicketPage.tsx       # Receipt view
+│   │   │   ├── HomePage.tsx
+│   │   │   ├── BusSearchPage.tsx
+│   │   │   ├── BusDetailsPage.tsx
+│   │   │   ├── BookingConfirmationPage.tsx
+│   │   │   └── TicketPage.tsx
 │   │   ├── utils/
-│   │   │   └── distance.ts          # Haversine distance calculator
-│   │   ├── App.tsx                  # Client router paths
-│   │   ├── main.tsx                 # React DOM mount point
-│   │   └── index.css                # Global styles and CSS variables
-│   ├── package.json                 # Frontend build commands
-│   ├── vite.config.ts               # Vite configuration
-│   └── tsconfig.json                # App and Node ts configs
-├── screenshots/                   # Captured workflow interface images
-└── README.md                      # Project profile showcase documentation
+│   │   │   └── distance.ts
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── index.css
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── tsconfig.json
+├── screenshots/
+└── README.md
 ```
 
 ---

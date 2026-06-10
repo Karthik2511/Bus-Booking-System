@@ -45,7 +45,7 @@ const ContactPage: React.FC = () => {
     <div className="contact-page-container">
       <div className="profile-header">
         <div className="profile-avatar">
-          {/* Avatar Placeholder or initials */}
+          {}
           <span>KD</span>
         </div>
         <h1>Karthikeya Darisi</h1>

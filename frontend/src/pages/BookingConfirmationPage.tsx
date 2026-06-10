@@ -14,7 +14,7 @@ const BookingConfirmationPage: React.FC = () => {
   const state = location.state as { busId: string; selectedSeats: number[]; price: number } | null;
 
   const [passengers, setPassengers] = useState<Passenger[]>([]);
-  const [timeLeft, setTimeLeft] = useState(300); // 5 minutes (user needs time)
+  const [timeLeft, setTimeLeft] = useState(300); 
   const [timerExpired, setTimerExpired] = useState(false);
   const [loading, setLoading] = useState(false);
   
@@ -125,7 +125,7 @@ const BookingConfirmationPage: React.FC = () => {
       </div>
 
       <div className="confirm-layout">
-        {/* Left Column: Passenger Forms */}
+        {}
         <div className="left-column">
           <div className="passengers-container-card">
             <h3 className="section-title">Passenger Details</h3>
@@ -192,7 +192,7 @@ const BookingConfirmationPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Summaries */}
+        {}
         <div className="right-column">
           <div className="summary-card bus-details">
             <h3>Bus Details</h3>

@@ -48,7 +48,7 @@
   font-size: 1.1rem;
 }
 
-/* Layout Grid */
+
 .confirm-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -56,7 +56,7 @@
   align-items: start;
 }
 
-/* Left Column Styling */
+
 .passengers-container-card {
   background: rgba(26, 22, 43, 0.6);
   backdrop-filter: blur(12px);
@@ -239,7 +239,7 @@
   transform: none;
 }
 
-/* Right Column Styling */
+
 .right-column {
   display: flex;
   flex-direction: column;
@@ -360,7 +360,7 @@
 
 .s-total .grand-total {
   font-size: 1.6rem;
-  color: #10b981; /* Green color exactly like the mockup! */
+  color: #10b981; 
   text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
 }
 

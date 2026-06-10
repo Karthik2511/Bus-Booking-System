@@ -27,7 +27,7 @@ const BusDetailsPage: React.FC = () => {
 
   useEffect(() => {
     fetchBusDetails();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [busId]);
 
   const fetchBusDetails = async () => {
@@ -50,7 +50,7 @@ const BusDetailsPage: React.FC = () => {
     if (selectedSeats.includes(seatNum)) {
       setSelectedSeats(selectedSeats.filter(s => s !== seatNum));
     } else {
-      // Max 4 seats
+      
       if (selectedSeats.length >= 4) {
         alert('You can select a maximum of 4 seats.');
         return;
@@ -72,11 +72,11 @@ const BusDetailsPage: React.FC = () => {
         const errorData = await res.json();
         throw new Error(errorData.error || 'Failed to lock seats');
       }
-      // Pass state to next page
+      
       navigate('/confirm', { state: { busId, selectedSeats, price: bus?.price } });
     } catch (err: any) {
       alert(err.message);
-      fetchBusDetails(); // refresh availability
+      fetchBusDetails(); 
     }
   };
 
@@ -84,7 +84,7 @@ const BusDetailsPage: React.FC = () => {
   if (error) return <div className="p-wrap error">{error}</div>;
   if (!bus) return null;
 
-  // Group seats by row for grid display
+  
   const maxRow = Math.max(...bus.seats.map(s => s.row));
   const rows = Array.from({ length: maxRow }, (_, i) => i + 1);
 
@@ -102,7 +102,7 @@ const BusDetailsPage: React.FC = () => {
           <div className="seats-grid">
             {rows.map(row => (
               <div key={row} className="seat-row">
-                {/* Columns 1 & 2 */}
+                {}
                 <div className="seat-pair">
                   {[1, 2].map(col => {
                     const seat = bus.seats.find(s => s.row === row && s.column === col);
@@ -121,9 +121,9 @@ const BusDetailsPage: React.FC = () => {
                     );
                   })}
                 </div>
-                {/* Aisle */}
+                {}
                 <div className="aisle"></div>
-                {/* Columns 3 & 4 */}
+                {}
                 <div className="seat-pair">
                   {[3, 4].map(col => {
                     const seat = bus.seats.find(s => s.row === row && s.column === col);

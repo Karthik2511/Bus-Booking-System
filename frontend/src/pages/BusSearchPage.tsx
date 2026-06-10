@@ -39,7 +39,7 @@ const BusSearchPage: React.FC = () => {
     }
   }, [depCity, arrCity]);
 
-  // Generic mock fetch for display
+  
   useEffect(() => {
     fetchBuses();
   }, [location.search]);
@@ -47,7 +47,7 @@ const BusSearchPage: React.FC = () => {
   const fetchBuses = async () => {
     setLoading(true);
     try {
-      // In a real app we'd construct the query string
+      
       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
       const res = await fetch(`${API_URL}/api/buses${location.search}`);
       const data = await res.json();

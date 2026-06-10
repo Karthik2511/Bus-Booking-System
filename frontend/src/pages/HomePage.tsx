@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
     }
   }, [selectedDepCity, selectedArrCity]);
 
-  // Close menus when clicking outside
+  
   const handleCityChange = (value: string, type: 'dep' | 'arr') => {
     if (type === 'dep') {
       setDeparture(value);

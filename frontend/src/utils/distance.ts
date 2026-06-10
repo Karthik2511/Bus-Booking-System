@@ -1,5 +1,5 @@
 export function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {
-  const R = 6371; // Radius of the earth in km
+  const R = 6371; 
   const dLat = deg2rad(lat2 - lat1);
   const dLon = deg2rad(lon2 - lon1);
   const a =
@@ -8,7 +8,7 @@ export function calculateDistance(lat1: number, lon1: number, lat2: number, lon2
     Math.sin(dLon / 2) * Math.sin(dLon / 2)
     ;
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  let d = R * c; // Distance in km
+  let d = R * c; 
   return Math.round(d);
 }
 
@@ -17,7 +17,7 @@ function deg2rad(deg: number) {
 }
 
 export function estimateTime(distanceKm: number): { hours: number; minutes: number } {
-  const speedKmH = 50; // Average bus speed
+  const speedKmH = 50; 
   const totalHours = distanceKm / speedKmH;
   const hours = Math.floor(totalHours);
   const minutes = Math.round((totalHours - hours) * 60);

@@ -10,10 +10,10 @@ export const getBuses = (req: Request, res: Response) => {
       return res.status(400).json({ error: 'departureCity, arrivalCity, and date are required parameters.' });
     }
 
-    // 1. Date Validation
+    
     const requestedDate = new Date(date as string);
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // Strip time
+    today.setHours(0, 0, 0, 0); 
     
     if (requestedDate < today) {
       return res.status(400).json({ error: 'No buses available on that day (trip completed).' });
@@ -22,7 +22,7 @@ export const getBuses = (req: Request, res: Response) => {
     const depCity = (departureCity as string).toLowerCase();
     const arrCity = (arrivalCity as string).toLowerCase();
 
-    // 2. Default filtering
+    
     let filteredBuses = busesData.filter(bus => {
       const depStopIndex = bus.stops.findIndex(s => s.stopName.toLowerCase() === depCity);
       const arrStopIndex = bus.stops.findIndex(s => s.stopName.toLowerCase() === arrCity);
@@ -32,9 +32,9 @@ export const getBuses = (req: Request, res: Response) => {
       return true;
     });
 
-    // 3. Dynamic Generation
+    
     if (filteredBuses.length === 0) {
-      // Generate 2-4 buses dynamically
+      
       const numToGenerate = Math.floor(Math.random() * 3) + 2; 
       const mockNames = ['Express Deluxe', 'Royal Cruiser', 'ZingBus AC Sleeper', 'SRS Connect', 'KSRTC Airavat', 'VRL Volvo Multi-Axle'];
       
@@ -72,7 +72,7 @@ export const getBuses = (req: Request, res: Response) => {
       }
     }
 
-    // 4. Secondary Filters
+    
     if (seatType) {
       filteredBuses = filteredBuses.filter(bus => bus.seatTypes.includes(seatType as string));
     }
